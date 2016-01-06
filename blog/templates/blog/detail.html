@@ -1,0 +1,44 @@
+{% extends "blog/base.html" %}
+{% block description %}{{article.content | truncatewords:50}}{%endblock%}
+{% block title %}{{article.title}}{% endblock %}
+{%block body_class %} post-template {% endblock %}
+{% load staticfiles %}
+
+{% block head %}
+<header class="main-header post-head no-cover">
+    {% include "widget/main-nav.html" %}
+</header>
+{% endblock %}
+
+
+{% block body %}
+
+<main class="content" role="main">
+    <article class="post">
+
+        <header class="post-header">
+            <h2 class="post-title">{{article.title}}</h2>
+            <section class="post-meta">
+                <time class="post-date" datetime="{{article.date|date:'b d, Y'}}">{{article.date|date:"b d, Y"}}
+                </time>
+            </section>
+        </header>
+
+        <section class="post-content">
+            {{article.content}}
+        </section>
+        <footer class="post-footer">
+
+            <section class="author">
+                <h4><a href="{{url}}">Prinny</a></h4>
+
+                <p>成为自己</p>
+
+            </section>
+        </footer>
+    </article>
+
+
+</main>
+
+{% endblock %}
