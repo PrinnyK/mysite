@@ -4,14 +4,14 @@
 {%block body_class %} home-template {% endblock %}
 {% load staticfiles %}
 {% block head %}
-
-<header class="main-header" style="background-image: url({% static 'img/home-bg.jpg' %})">
+<!--{% static 'img/home-bg.jpg' %}-->
+<header class="main-header" style="background-image: url({{img}})">
 
     {% include "widget/main-nav.html" %}
     <div class="vertical">
         <div class="main-header-content inner">
-            <h1 class="page-title">记不住</h1>
-<h1 class="page-title">那就留在博客里吧</h1>
+            <h1 class="page-title">the first step</h1>
+<h1 class="page-title">of mine</h1>
         </div>
     </div>
     <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
