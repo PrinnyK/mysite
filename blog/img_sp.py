@@ -6,7 +6,7 @@ import urllib2
 import re
 
 def GetPage():
-    url = 'http://global.bing.com/'
+    url = 'http://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1'
     ua = {
     'User-Agent':'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.103 Safari/537.36'
     }
@@ -15,9 +15,9 @@ def GetPage():
     return response.read()
 
 def GetLink(html):
-    s_start = html.index("url:'")
+    s_start = html.index('url"')
     s_end = html.index('jpg')
-    return html[s_start + 5 : s_end] + 'jpg'
+    return html[s_start + 6 : s_end] + 'jpg'
 
 if __name__ == '__main__':
     print GetLink(GetPage())
