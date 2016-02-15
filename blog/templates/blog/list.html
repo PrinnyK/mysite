@@ -3,6 +3,7 @@
 {% block title %}Prinny{% endblock %}
 {%block body_class %} home-template {% endblock %}
 {% load staticfiles %}
+{% load markdown_deux_tags %}
 {% block head %}
 <!--{% static 'img/home-bg.jpg' %}-->
 <header class="main-header" style="background-image: url({{img}})">
@@ -28,7 +29,7 @@
             <h2 class="post-title"><a href="{% url 'blog:detail' article.pk %}">{{article.title}}</a></h2>
         </header>
         <section class="post-excerpt">
-            <p><a class="read-more" href="{% url 'blog:detail' article.pk %}">{{article.content | truncatewords:140}} &raquo;</a></p>
+            <p><a class="read-more" href="{% url 'blog:detail' article.pk %}">{{article.content|truncatewords:50|markdown}} &raquo;</a></p>
         </section>
         <footer class="post-meta">
             {{article.category}}

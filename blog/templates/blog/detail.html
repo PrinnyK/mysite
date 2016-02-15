@@ -3,6 +3,7 @@
 {% block title %}{{article.title}}{% endblock %}
 {%block body_class %} post-template {% endblock %}
 {% load staticfiles %}
+{% load markdown_deux_tags %}
 
 {% block head %}
 <header class="main-header post-head no-cover">
@@ -25,7 +26,7 @@
         </header>
 
         <section class="post-content">
-            {{article.content}}
+            {{article.content|markdown}}
         </section>
         <footer class="post-footer">
 
