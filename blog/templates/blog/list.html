@@ -12,7 +12,7 @@
     <div class="vertical">
         <div class="main-header-content inner">
             <h1 class="page-title">the first step</h1>
-<h1 class="page-title">of mine</h1>
+            <h1 class="page-title">of mine</h1>
         </div>
     </div>
     <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
@@ -32,7 +32,7 @@
             <p><a class="read-more" href="{% url 'blog:detail' article.pk %}">{{article.content|truncatewords:50|markdown}} &raquo;</a></p>
         </section>
         <footer class="post-meta">
-            {{article.category}}
+            <a href="{% url 'blog:category' article.category.pk %}">{{article.category}}</a>
             <time class="post-date" datetime='{{article.date|date:"b d, Y"}}'>{{article.date|date:"b d, Y"}}</time>
         </footer>
     </article>

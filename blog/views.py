@@ -6,7 +6,10 @@ import img_sp
 
 class articleListView(ListView):
     model = article
-    queryset = article.objects.all()
+    try:
+        queryset = article.objects.filter(category=pk)
+    except:
+        queryset = article.objects.all()
     template_name = 'blog/list.html'
     ordering = "-date"
     context_object_name = "articles"
